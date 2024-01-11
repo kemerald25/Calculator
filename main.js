@@ -57,23 +57,23 @@ function addToDisplay(value) {
         }
 
         // Event listener for keyboard input
-        // document.addEventListener("keydown", handleKeyboardInput);
+        document.addEventListener("keydown", handleKeyboardInput);
 
-        // function handleKeyboardInput(event) {
-        //     const key = event.key;
+        function handleKeyboardInput(event) {
+            const key = event.key;
 
-        //     if (/[\d+\-*/.=]/.test(key) || key === "Backspace") {
-        //         event.preventDefault();
-        //         if (key === "=") {
-        //             calculate();
-        //         } else if (key === "Backspace") {
-        //             backSpace();
-        //         } else {
-        //             addToDisplay(key);
-        //         }
-        //     } else if (key === "c" || key === "C") {
-        //         event.preventDefault();
-        //         clearDisplay();
-        //     }
-        // }
+            if (/[\d+\-*/.=]/.test(key) || key === "Backspace") {
+                event.preventDefault();
+                if (key === "=") {
+                    calculate();
+                } else if (key === "Backspace") {
+                    backSpace();
+                } else {
+                    addToDisplay(key);
+                }
+            } else if (key === "c" || key === "C") {
+                event.preventDefault();
+                clearDisplay();
+            }
+        }
         module.exports = { addToDisplay, clearDisplay, calculate, backSpace, calculateSquareRoot, updateDisplay };
